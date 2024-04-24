@@ -1,0 +1,19 @@
+.formCadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    gap: 1.2rem;
+}
+
+.textFields {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+.formCadastro button {
+    width: 65%;
+}
