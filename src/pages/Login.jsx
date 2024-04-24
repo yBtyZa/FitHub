@@ -1,9 +1,7 @@
+import CTemplateLogin from "../components/templates/CTemplateLogin";
+
 function Login() {
-  return (
-    <>
-      <h1>Login</h1>
-    </>
-  );
+ return <CTemplateLogin />;
 }
 
 export default Login;
