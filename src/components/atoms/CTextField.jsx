@@ -1,6 +1,7 @@
 import { TextField } from "@mui/material";
+import { forwardRef } from "react";
 
-function CTextField(props) {
- return <TextField {...props} />;
-}
+const CTextField = forwardRef((props, ref) => {
+ return <TextField {...props} ref={ref} />;
+});
 export default CTextField;
