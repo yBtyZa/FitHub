@@ -4,16 +4,31 @@
     justify-content: center;
     align-items: center;
     width: 70%;
-    gap: 1.2rem;
+    gap: 0.3rem;
 }
 
 .textFields {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .formCadastro button {
     width: 65%;
+    margin-top: 1rem;
+}
+
+.error {
+    color: red;
+    font-size: 10px;
+    width: 100%;
+}
+
+.errorDuplo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: red;
+    font-size: 10px;
 }

@@ -24,7 +24,7 @@ function useFetch(url) {
   };
  }, [url]);
 
- return [data, loading, isVisible];
+ return { data, loading, isVisible };
 }
 
 export default useFetch;
