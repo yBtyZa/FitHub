@@ -3,27 +3,8 @@ import CTextField from "../atoms/CTextField";
 import CButton from "../atoms/CButton";
 import { MenuItem } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
-
-import { useNavigate } from "react-router-dom";
-
 import { useContext } from "react";
 import { UsuariosContext } from "../../context/UsuariosContext";
-
-const options = [
- {
-  label: "Masculino",
-  value: "Masculino"
- },
- {
-  label: "Feminino",
-  value: "Feminino"
- },
- {
-  label: "Outro",
-  value: "Outro"
- }
-];
 
 function CFormCadastroUsuario() {
  const {
@@ -32,35 +13,13 @@ function CFormCadastroUsuario() {
   formState: { errors }
  } = useForm();
 
- const navigate = useNavigate();
- function gotoLogin() {
-  navigate("/");
- }
- const { usuarios, setUsuarios } = useContext(UsuariosContext);
- const [senhaError, setSenhaError] = useState(null);
- const [cpfError, setCpfError] = useState(null);
- function onSubmitForm(form) {
-  if (form.senha !== form.confirmar_senha) {
-   setSenhaError("Senhas diferentes");
-   return;
-  }
+ const { onSubmitForm, gotoLogin, senhaError, cpfError, options } =
+  useContext(UsuariosContext);
 
-  if (usuarios.find((user) => user.cpf === form.cpf)) {
-   setCpfError("CPF já cadastrado");
-   return;
-  }
-
-  setCpfError(null);
-  setSenhaError("Senha obrigatória");
-  console.log("Novo usuário:", form);
-  setUsuarios([...usuarios, form]);
-  console.log("Lista de usuários atualizada:", [...usuarios, form]);
-  gotoLogin();
- }
  return (
   <form
    className={stylesCadastro.formCadastro}
-   onSubmit={handleSubmit(onSubmitForm)}>
+   onSubmit={handleSubmit((form) => onSubmitForm(form))}>
    <CTextField
     variant="standard"
     label="Nome de usuário"
@@ -124,7 +83,7 @@ function CFormCadastroUsuario() {
    </div>
    <div className={stylesCadastro.errorDuplo}>
     {errors.cpf && <p>{errors.cpf.message}</p>}
-    {errors.nome && <p>{errors.nome.message}</p>}
+    {errors.data_nasc && <p>{errors.data_nasc.message}</p>}
     {cpfError === "CPF já cadastrado" && <p>{cpfError}</p>}
    </div>
    <div className={stylesCadastro.textFields}>
@@ -203,7 +162,7 @@ function CFormCadastroUsuario() {
    <div className={stylesCadastro.errorDuplo}>
     {errors.senha && <p>{errors.senha.message}</p>}
     {errors.confirmar_senha && <p>{errors.confirmar_senha.message}</p>}
-    {senhaError === "Senhas diferentes" && <p>{senhaError}</p>}
+    {senhaError === "As senhas precisam ser iguais" && <p>{senhaError}</p>}
    </div>
    <CButton
     className={stylesCadastro.button}
@@ -216,7 +175,7 @@ function CFormCadastroUsuario() {
     Cadastrar
    </CButton>
    <CButton
-    onClick={gotoLogin}
+    onClick={() => gotoLogin()}
     variant="outlined"
     sx={{
      color: "#01161e",
