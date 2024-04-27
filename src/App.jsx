@@ -5,11 +5,11 @@ import { CepContextProvider } from "./context/CepContext";
 
 function App() {
  return (
-  <UsuariosContextProvider>
-   <CepContextProvider>
+  <CepContextProvider>
+   <UsuariosContextProvider>
     <Outlet />
-   </CepContextProvider>
-  </UsuariosContextProvider>
+   </UsuariosContextProvider>
+  </CepContextProvider>
  );
 }
 
