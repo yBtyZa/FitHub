@@ -13,13 +13,21 @@ function CFormCadastroUsuario() {
   formState: { errors }
  } = useForm();
 
- const { onSubmitForm, gotoLogin, senhaError, cpfError, options } =
-  useContext(UsuariosContext);
+ const {
+  onSubmitFormCadastro,
+  gotoLogin,
+  senhaError,
+  cpfError,
+  emailError,
+  options
+ } = useContext(UsuariosContext);
 
  return (
   <form
    className={stylesCadastro.formCadastro}
-   onSubmit={handleSubmit((form) => onSubmitForm(form))}>
+   onSubmit={handleSubmit((formCadastro) =>
+    onSubmitFormCadastro(formCadastro)
+   )}>
    <CTextField
     variant="standard"
     label="Nome de usuário"
@@ -44,13 +52,14 @@ function CFormCadastroUsuario() {
     {...register("email", {
      required: "E-mail obrigatório",
      maxLength: {
-      value: 30,
+      value: 60,
       message: "E-mail muito grande"
      }
     })}
    />
    <div className={stylesCadastro.error}>
     {errors.email && <p>{errors.email.message}</p>}
+    {emailError && <p>{emailError}</p>}
    </div>
    <div className={stylesCadastro.textFields}>
     <CTextField
