@@ -11,7 +11,7 @@ function useFetch(url) {
    .then((res) => res.json())
    .then((value) => {
     setData(value);
-    console.log(value);
+    // console.log(value);
    })
    .catch((error) => {
     alert("Ocorreu um erro ao carregar os dados: ");

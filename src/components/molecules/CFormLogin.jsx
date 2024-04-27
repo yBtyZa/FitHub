@@ -1,16 +1,68 @@
 import CTextField from "../atoms/CTextField";
 import CButton from "../atoms/CButton";
 import styles from "../../pages/pagesCSS/Login.module.css";
+import stylesCadastro from "../../pages/pagesCSS/CadastroUsuario.module.css";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { UsuariosContext } from "../../context/UsuariosContext";
 
 function CFormLogin() {
+ const {
+  handleSubmit,
+  register,
+  formState: { errors }
+ } = useForm();
+
+ const { onSubmitFormLogin, senhaError, emailError } =
+  useContext(UsuariosContext);
+
  return (
-  <form className={styles.form}>
-   <CTextField label="Email" variant="standard" type="email" />
-   <CTextField label="Senha" variant="standard" type="password" />
+  <form
+   className={styles.form}
+   onSubmit={handleSubmit((formLogin) => onSubmitFormLogin(formLogin))}>
+   <div className={styles.inputContainer}>
+    <CTextField
+     label="E-mail"
+     variant="standard"
+     type="email"
+     fullWidth
+     {...register("email", {
+      required: "Email obrigatório"
+     })}
+    />
+    {errors.email && (
+     <p className={stylesCadastro.error}>{errors.email.message}</p>
+    )}
+    {emailError && <p className={stylesCadastro.error}>{emailError}</p>}
+   </div>
+   <div className={styles.inputContainer}>
+    <CTextField
+     label="Senha"
+     variant="standard"
+     type="password"
+     fullWidth
+     {...register("senha", {
+      required: "Senha obrigatória",
+      minLength: {
+       value: 8,
+       message: "Senha muito curta (8 caracteres)"
+      },
+      maxLength: {
+       value: 16,
+       message: "Senha muito longa (16 caracteres)"
+      }
+     })}
+    />
+    {errors.senha && (
+     <p className={stylesCadastro.error}>{errors.senha.message}</p>
+    )}
+    {senhaError && <p className={stylesCadastro.error}>{senhaError}</p>}
+   </div>
    <Link to={"/"}>Esqueceu a senha?</Link>
    <CButton
     variant="contained"
+    type="submit"
     sx={{
      backgroundColor: "#01161e",
      color: "#eff6e0",
