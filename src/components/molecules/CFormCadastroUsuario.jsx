@@ -1,15 +1,17 @@
 import stylesCadastro from "../../pages/pagesCSS/CadastroUsuario.module.css";
 import CTextField from "../atoms/CTextField";
 import CButton from "../atoms/CButton";
-import { MenuItem } from "@mui/material";
 import { useForm } from "react-hook-form";
+import { MenuItem } from "@mui/material";
 import { useContext } from "react";
 import { UsuariosContext } from "../../context/UsuariosContext";
-
+import { CepContext } from "../../context/CepContext";
 function CFormCadastroUsuario() {
  const {
   register,
   handleSubmit,
+  setValue,
+  getValues,
   formState: { errors }
  } = useForm();
 
@@ -22,42 +24,44 @@ function CFormCadastroUsuario() {
   options
  } = useContext(UsuariosContext);
 
+ const { buscarCep } = useContext(CepContext);
+
  return (
   <form
    className={stylesCadastro.formCadastro}
    onSubmit={handleSubmit((formCadastro) =>
     onSubmitFormCadastro(formCadastro)
    )}>
-   <CTextField
-    variant="standard"
-    label="Nome de usuário"
-    type="text"
-    fullWidth
-    {...register("nome", {
-     required: "Nome de usuário obrigatório",
-     maxLength: {
-      value: 30,
-      message: "Nome de usuário muito grande"
-     }
-    })}
-   />
-   <div className={stylesCadastro.error}>
-    {errors.nome && <p>{errors.nome.message}</p>}
+   <div className={stylesCadastro.textFields}>
+    <CTextField
+     variant="standard"
+     label="Nome de usuário"
+     type="text"
+     fullWidth
+     {...register("nome", {
+      required: "Nome de usuário obrigatório",
+      maxLength: {
+       value: 30,
+       message: "Nome de usuário muito grande"
+      }
+     })}
+    />
+    <CTextField
+     variant="standard"
+     label="E-mail"
+     type="email"
+     fullWidth
+     {...register("email", {
+      required: "E-mail obrigatório",
+      maxLength: {
+       value: 60,
+       message: "E-mail muito grande"
+      }
+     })}
+    />
    </div>
-   <CTextField
-    variant="standard"
-    label="E-mail"
-    type="email"
-    fullWidth
-    {...register("email", {
-     required: "E-mail obrigatório",
-     maxLength: {
-      value: 60,
-      message: "E-mail muito grande"
-     }
-    })}
-   />
-   <div className={stylesCadastro.error}>
+   <div className={stylesCadastro.errorDuplo}>
+    {errors.nome && <p>{errors.nome.message}</p>}
     {errors.email && <p>{errors.email.message}</p>}
     {emailError && <p>{emailError}</p>}
    </div>
@@ -124,13 +128,51 @@ function CFormCadastroUsuario() {
       minLength: {
        value: 8,
        message: "CEP muito pequeno"
-      }
+      },
+      onBlur: () => buscarCep(getValues, setValue)
      })}
     />
    </div>
    <div className={stylesCadastro.errorDuplo}>
     {errors.sexo && <p>{errors.sexo.message}</p>}
     {errors.cep && <p>{errors.cep.message}</p>}
+   </div>
+   <div className={stylesCadastro.textFields}>
+    <div className={stylesCadastro.textFieldsCep}>
+     <CTextField
+      disabled
+      variant="standard"
+      label="Endereço"
+      type="text"
+      defaultValue=" "
+      fullWidth
+      {...register("endereco", {
+       required: "Endereço obrigatório"
+      })}
+     />
+     <CTextField
+      disabled
+      variant="standard"
+      label="Cidade"
+      type="text"
+      defaultValue=" "
+      {...register("cidade", {
+       required: true
+      })}
+     />
+     <CTextField
+      disabled
+      id="standard-select-currency"
+      variant="standard"
+      label="UF"
+      defaultValue=" "
+      {...register("estado", { required: true })}></CTextField>
+    </div>
+   </div>
+   <div className={stylesCadastro.errorDuplo}>
+    {(errors.endereco || errors.cidade || errors.estado) && (
+     <p>{errors.endereco.message}</p>
+    )}
    </div>
    <div className={stylesCadastro.textFields}>
     <CTextField

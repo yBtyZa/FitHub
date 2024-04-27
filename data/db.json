@@ -1,7 +1,7 @@
 {
  "usuarios": [
   {
-   "id": "1",
+   "id": 1,
    "nome": "Sarah Emilly Aparício",
    "email": "sarah_aparicio@allianceconsultoria.com.br",
    "cpf": "02414551119",
@@ -14,7 +14,7 @@
    "estado": "CE"
   },
   {
-   "id": "2",
+   "id": 2,
    "nome": "Hugo Kauê Pinto",
    "email": "hugo_kaue_pinto@editorazap.com.br",
    "cpf": "65554950302",
@@ -27,7 +27,7 @@
    "estado": "MA"
   },
   {
-   "id": "3",
+   "id": 3,
    "nome": "Rafaela Aparecida Luzia Teixeira",
    "email": "rafaela-teixeira71@alesalvatori.com",
    "cpf": "56446886667",
@@ -40,7 +40,7 @@
    "estado": "AL"
   },
   {
-   "id": "4",
+   "id": 4,
    "nome": "Augusto Benedito Renato Pereira",
    "email": "augusto_pereira@aclnet.com.br",
    "cpf": "40046987070",
@@ -53,7 +53,7 @@
    "estado": "SP"
   },
   {
-   "id": "5",
+   "id": 5,
    "nome": "Ian Thomas Gabriel Araújo",
    "email": "ian_thomas_araujo@desir.com.br",
    "cpf": "30177135719",
@@ -64,11 +64,6 @@
    "endereco": "Quadra 04",
    "cidade": "Picos",
    "estado": "PI"
-  }
- ],
- "exercicios": [
-  {
-   "id": "33d5"
   }
  ]
 }

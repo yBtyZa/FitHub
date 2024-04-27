@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export const UsuariosContext = createContext();
 let url = "http://localhost:3000/usuarios";
-
 export const UsuariosContextProvider = ({ children }) => {
  const { data, loading, isVisible } = useFetch(url);
 
@@ -12,7 +11,6 @@ export const UsuariosContextProvider = ({ children }) => {
  const [senhaError, setSenhaError] = useState(null);
  const [cpfError, setCpfError] = useState(null);
  const [emailError, setEmailError] = useState(null);
-
  useEffect(() => {
   if (!loading && data) {
    setUsuarios(data);
@@ -52,8 +50,8 @@ export const UsuariosContextProvider = ({ children }) => {
   setCpfError(null);
   setSenhaError(null);
   setEmailError(null);
-  gotoLogin();
   cadastrarUsuarioDb(formCadastro);
+  gotoLogin();
  }
 
  function cadastrarUsuarioDb(formCadastro) {

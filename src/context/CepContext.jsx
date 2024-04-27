@@ -1,24 +1,33 @@
-import { createContext, useState, useEffect } from "react";
-import useFetch from "../hooks/useFetch";
+import { createContext, useState } from "react";
 
 export const CepContext = createContext();
 
 export const CepContextProvider = ({ children }) => {
- const { data, loading, isVisible } = useFetch(
-  "https://viacep.com.br/ws/88047622/json/"
- );
+ const buscarCep = async (getValues, setValue) => {
+  let cep = getValues("cep");
 
- const [dataCep, setDataCep] = useState({});
-
- useEffect(() => {
-  if (!loading && data) {
-   setDataCep(data);
+  if (cep.length === 8) {
+   try {
+    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    const data = await response.json();
+    if (!data.erro) {
+     alterarValues(data, setValue);
+    } else {
+     alert("CEP não encontrado");
+    }
+   } catch (error) {
+    alert(error);
+   }
   }
- }, [data, loading]);
+ };
+
+ const alterarValues = (data, setValue) => {
+  setValue("endereco", data.logradouro || "");
+  setValue("cidade", data.localidade || "");
+  setValue("estado", data.uf || "");
+ };
 
  return (
-  <CepContext.Provider value={{ dataCep, loading, isVisible, setDataCep }}>
-   {children}
-  </CepContext.Provider>
+  <CepContext.Provider value={{ buscarCep }}>{children}</CepContext.Provider>
  );
 };
