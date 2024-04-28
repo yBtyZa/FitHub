@@ -14,7 +14,7 @@ function CFormLogin() {
   formState: { errors }
  } = useForm();
 
- const { onSubmitFormLogin, senhaError, emailError } =
+ const { onSubmitFormLogin, senhaError, emailError, gotoRegister } =
   useContext(UsuariosContext);
 
  return (
@@ -70,8 +70,9 @@ function CFormLogin() {
     }}>
     Entrar
    </CButton>
-   <Link to={"/cadastro-usuario"} className={styles.link}>
     <CButton
+    onClick={() => gotoRegister()}
+    className={styles.link}
      variant="outlined"
      sx={{
       color: "#01161e",
@@ -80,7 +81,6 @@ function CFormLogin() {
      }}>
      Cadastre-se
     </CButton>
-   </Link>
   </form>
  );
 }

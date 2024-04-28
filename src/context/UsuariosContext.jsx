@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
-import { useNavigate } from "react-router-dom";
 
 export const UsuariosContext = createContext();
 let url = "http://localhost:3000/usuarios";
@@ -71,15 +70,18 @@ export const UsuariosContextProvider = ({ children }) => {
 
  async function onSubmitFormLogin(formLogin) {
   try {
+   let userLogged = false;
    let usuarioEncontrado = usuarios.find(
     (user) => user.email == formLogin.email
    );
 
    if (usuarioEncontrado) {
     if (usuarioEncontrado.senha === formLogin.senha) {
-     alert("Login efetuado com sucesso");
      setSenhaError(null);
      setEmailError(null);
+     userLogged = true;
+     localStorage.setItem("userLogged", userLogged);
+     window.location.href = "/";
     } else {
      setSenhaError("Senha inválida");
      setEmailError(null);
@@ -93,9 +95,12 @@ export const UsuariosContextProvider = ({ children }) => {
   }
  }
 
- const navigate = useNavigate();
  function gotoLogin() {
-  navigate("/");
+  window.location.href = "/login";
+ }
+
+ function gotoRegister() {
+  window.location.href = "/cadastro-usuario";
  }
 
  const options = [
@@ -123,6 +128,7 @@ export const UsuariosContextProvider = ({ children }) => {
     onSubmitFormCadastro,
     onSubmitFormLogin,
     gotoLogin,
+    gotoRegister,
     senhaError,
     cpfError,
     emailError,
