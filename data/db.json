@@ -1,83 +1,69 @@
 {
-  "usuarios": [
-    {
-      "id": "1",
-      "nome": "Sarah Emilly Aparício",
-      "email": "sarah_aparicio@allianceconsultoria.com.br",
-      "cpf": "02414551119",
-      "data_nasc": "02/01/1999",
-      "sexo": "Feminino",
-      "senha": "tcoG4cb38C",
-      "cep": "60342050",
-      "endereco": "Vila Gilson",
-      "cidade": "Fortaleza",
-      "estado": "CE"
-    },
-    {
-      "id": "2",
-      "nome": "Hugo Kauê Pinto",
-      "email": "hugo_kaue_pinto@editorazap.com.br",
-      "cpf": "65554950302",
-      "data_nasc": "27/01/1980",
-      "sexo": "Masculino",
-      "senha": "KysIX8fiSK",
-      "cep": "65076325",
-      "endereco": "Travessa da Um",
-      "cidade": "São Luís",
-      "estado": "MA"
-    },
-    {
-      "id": "3",
-      "nome": "Rafaela Aparecida Luzia Teixeira",
-      "email": "rafaela-teixeira71@alesalvatori.com",
-      "cpf": "56446886667",
-      "data_nasc": "26/03/1961",
-      "sexo": "Feminino",
-      "senha": "lScyTHX3UJ",
-      "cep": "57084770",
-      "endereco": "Avenida Jornalista Oberaldo Firmino dos Santos",
-      "cidade": "Maceió",
-      "estado": "AL"
-    },
-    {
-      "id": "4",
-      "nome": "Augusto Benedito Renato Pereira",
-      "email": "augusto_pereira@aclnet.com.br",
-      "cpf": "40046987070",
-      "data_nasc": "18/02/1957",
-      "sexo": "Masculino",
-      "senha": "B9kwUZWiw0",
-      "cep": "13800726",
-      "endereco": "Rua Ádamo Pieri",
-      "cidade": "Mogi Mirim",
-      "estado": "SP"
-    },
-    {
-      "id": "5",
-      "nome": "Ian Thomas Gabriel Araújo",
-      "email": "ian_thomas_araujo@desir.com.br",
-      "cpf": "30177135719",
-      "data_nasc": "27/03/1995",
-      "sexo": "Masculino",
-      "senha": "7pTuQz1KX7",
-      "cep": "64606435",
-      "endereco": "Quadra 04",
-      "cidade": "Picos",
-      "estado": "PI"
-    },
-    {
-      "id": "876c",
-      "nome": "Guilherme Andre Betsa",
-      "email": "bet.sa@hotmail.com",
-      "cpf": "44437696840",
-      "data_nasc": "2024-01-01",
-      "sexo": "Masculino",
-      "cep": "88047622",
-      "endereco": "Rua Raimundo Starosky",
-      "cidade": "Florianópolis",
-      "estado": "SC",
-      "senha": "ni30ce22",
-      "confirmar_senha": "ni30ce22"
-    }
-  ]
+ "usuarios": [
+  {
+   "id": 1,
+   "nome": "Sarah Emilly Aparício",
+   "email": "sarah_aparicio@allianceconsultoria.com.br",
+   "cpf": "02414551119",
+   "data_nasc": "02/01/1999",
+   "sexo": "Feminino",
+   "senha": "tcoG4cb38C",
+   "cep": "60342050",
+   "endereco": "Vila Gilson",
+   "cidade": "Fortaleza",
+   "estado": "CE"
+  },
+  {
+   "id": 2,
+   "nome": "Hugo Kauê Pinto",
+   "email": "hugo_kaue_pinto@editorazap.com.br",
+   "cpf": "65554950302",
+   "data_nasc": "27/01/1980",
+   "sexo": "Masculino",
+   "senha": "KysIX8fiSK",
+   "cep": "65076325",
+   "endereco": "Travessa da Um",
+   "cidade": "São Luís",
+   "estado": "MA"
+  },
+  {
+   "id": 3,
+   "nome": "Rafaela Aparecida Luzia Teixeira",
+   "email": "rafaela-teixeira71@alesalvatori.com",
+   "cpf": "56446886667",
+   "data_nasc": "26/03/1961",
+   "sexo": "Feminino",
+   "senha": "lScyTHX3UJ",
+   "cep": "57084770",
+   "endereco": "Avenida Jornalista Oberaldo Firmino dos Santos",
+   "cidade": "Maceió",
+   "estado": "AL"
+  },
+  {
+   "id": 4,
+   "nome": "Augusto Benedito Renato Pereira",
+   "email": "augusto_pereira@aclnet.com.br",
+   "cpf": "40046987070",
+   "data_nasc": "18/02/1957",
+   "sexo": "Masculino",
+   "senha": "B9kwUZWiw0",
+   "cep": "13800726",
+   "endereco": "Rua Ádamo Pieri",
+   "cidade": "Mogi Mirim",
+   "estado": "SP"
+  },
+  {
+   "id": 5,
+   "nome": "Ian Thomas Gabriel Araújo",
+   "email": "ian_thomas_araujo@desir.com.br",
+   "cpf": "30177135719",
+   "data_nasc": "27/03/1995",
+   "sexo": "Masculino",
+   "senha": "7pTuQz1KX7",
+   "cep": "64606435",
+   "endereco": "Quadra 04",
+   "cidade": "Picos",
+   "estado": "PI"
+  }
+ ]
 }
