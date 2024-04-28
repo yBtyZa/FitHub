@@ -162,17 +162,41 @@ function CFormCadastroUsuario() {
      />
      <CTextField
       disabled
-      id="standard-select-currency"
       variant="standard"
       label="UF"
       defaultValue=" "
       {...register("estado", { required: true })}></CTextField>
     </div>
    </div>
+   <div className={stylesCadastro.textFields}>
+    <CTextField
+     type="number"
+     variant="standard"
+     label="Numero"
+     {...register("endereco_numero", {
+      required: true,
+      minLength: {
+       value: 1
+      }
+     })}></CTextField>
+    <CTextField
+     type="text"
+     variant="standard"
+     label="Complemento"
+     fullWidth
+     {...register("complemento", {
+      required: true,
+      minLength: {
+       value: 1
+      }
+     })}></CTextField>
+   </div>
    <div className={stylesCadastro.errorDuplo}>
-    {(errors.endereco || errors.cidade || errors.estado) && (
-     <p>{errors.endereco.message}</p>
-    )}
+    {(errors.endereco ||
+     errors.cidade ||
+     errors.estado ||
+     errors.endereco_numero ||
+     errors.complemento) && <p>Endereço obrigatório</p>}
    </div>
    <div className={stylesCadastro.textFields}>
     <CTextField
