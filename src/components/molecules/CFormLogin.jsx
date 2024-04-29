@@ -16,7 +16,6 @@ function CFormLogin() {
 
  const { onSubmitFormLogin, senhaError, emailError, gotoRegister } =
   useContext(UsuariosContext);
-
  return (
   <form
    className={styles.form}
@@ -70,17 +69,16 @@ function CFormLogin() {
     }}>
     Entrar
    </CButton>
-    <CButton
-    onClick={() => gotoRegister()}
+   <CButton
     className={styles.link}
-     variant="outlined"
-     sx={{
-      color: "#01161e",
-      borderColor: "#01161e",
-      "&:hover": { borderColor: "#AEC3B0" }
-     }}>
-     Cadastre-se
-    </CButton>
+    variant="outlined"
+    sx={{
+     color: "#01161e",
+     borderColor: "#01161e",
+     "&:hover": { borderColor: "#AEC3B0" }
+    }}>
+    Cadastre-se
+   </CButton>
   </form>
  );
 }

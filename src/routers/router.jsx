@@ -8,7 +8,7 @@ import CadastroExercicios from "../pages/CadastroExercicios";
 
 let userLogged = JSON.parse(localStorage.getItem("userLogged")) || false;
 
-const PriviteRoute = ({ children }) => {
+export const PriviteRoute = ({ children }) => {
  return userLogged ? children : <Navigate to="/login" />;
 };
 

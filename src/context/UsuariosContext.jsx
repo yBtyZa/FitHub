@@ -81,6 +81,7 @@ export const UsuariosContextProvider = ({ children }) => {
      setEmailError(null);
      userLogged = true;
      localStorage.setItem("userLogged", userLogged);
+     localStorage.setItem("userNome", JSON.stringify(usuarioEncontrado.nome));
      window.location.href = "/";
     } else {
      setSenhaError("Senha inválida");

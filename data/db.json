@@ -64,6 +64,69 @@
    "endereco": "Quadra 04",
    "cidade": "Picos",
    "estado": "PI"
+  },
+  {
+   "id": "f4a8",
+   "nome": "Guilherme Andre Betsa",
+   "email": "betsa@email.com.br",
+   "cpf": "00000000001",
+   "data_nasc": "2002-07-12",
+   "sexo": "Masculino",
+   "cep": "88047622",
+   "endereco": "Rua Raimundo Starosky",
+   "cidade": "Florianópolis",
+   "estado": "SC",
+   "endereco_numero": "0",
+   "complemento": "A",
+   "senha": "12345678",
+   "confirmar_senha": "12345678"
+  }
+ ],
+ "exercicios": [
+  {
+   "id": "1",
+   "nome": "Beira Mar",
+   "id_usuario": "f4a8",
+   "nome_usuario": "Guilherme Andre Betsa",
+   "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
+   "localizacao": "",
+   "tipo": "Caminhada"
+  },
+  {
+   "id": "1",
+   "nome": "Beira Mar",
+   "id_usuario": "f4a8",
+   "nome_usuario": "Guilherme Andre Betsa",
+   "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
+   "localizacao": "",
+   "tipo": "Caminhada"
+  },
+  {
+   "id": "1",
+   "nome": "Beira Mar",
+   "id_usuario": "f4a8",
+   "nome_usuario": "Guilherme Andre Betsa",
+   "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
+   "localizacao": "",
+   "tipo": "Caminhada"
+  },
+  {
+   "id": "1",
+   "nome": "Beira Mar",
+   "id_usuario": "f4a8",
+   "nome_usuario": "Guilherme Andre Betsa",
+   "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
+   "localizacao": "",
+   "tipo": "Caminhada"
+  },
+  {
+   "id": "1",
+   "nome": "Beira Mar",
+   "id_usuario": "f4a8",
+   "nome_usuario": "Guilherme Andre Betsa",
+   "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
+   "localizacao": "",
+   "tipo": "Caminhada"
   }
  ]
 }
