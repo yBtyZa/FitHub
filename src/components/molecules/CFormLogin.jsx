@@ -70,6 +70,7 @@ function CFormLogin() {
     Entrar
    </CButton>
    <CButton
+    onClick={() => gotoRegister()}
     className={styles.link}
     variant="outlined"
     sx={{

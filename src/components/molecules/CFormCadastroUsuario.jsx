@@ -184,12 +184,7 @@ function CFormCadastroUsuario() {
      variant="standard"
      label="Complemento"
      fullWidth
-     {...register("complemento", {
-      required: true,
-      minLength: {
-       value: 1
-      }
-     })}></CTextField>
+     {...register("complemento")}></CTextField>
    </div>
    <div className={stylesCadastro.errorDuplo}>
     {(errors.endereco ||
