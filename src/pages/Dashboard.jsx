@@ -1,10 +1,8 @@
+import styles from "./pagesCSS/Dashboard.module.css";
+import CTemplateDashboard from "../components/templates/CTemplateDashboard";
+
 function Dashboard() {
-    return (
-      <>
-        <h1>Dashboard</h1>
-      </>
-    );
-  }
-  
-  export default Dashboard;
-  
+ return <CTemplateDashboard />;
+}
+
+export default Dashboard;

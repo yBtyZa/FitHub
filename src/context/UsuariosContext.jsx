@@ -10,6 +10,7 @@ export const UsuariosContextProvider = ({ children }) => {
  const [senhaError, setSenhaError] = useState(null);
  const [cpfError, setCpfError] = useState(null);
  const [emailError, setEmailError] = useState(null);
+
  useEffect(() => {
   if (!loading && data) {
    setUsuarios(data);
@@ -81,6 +82,8 @@ export const UsuariosContextProvider = ({ children }) => {
      setEmailError(null);
      userLogged = true;
      localStorage.setItem("userLogged", userLogged);
+     localStorage.setItem("userNome", JSON.stringify(usuarioEncontrado.nome));
+     atualizarStatus(usuarioEncontrado, usuarioEncontrado.id);
      window.location.href = "/";
     } else {
      setSenhaError("Senha inválida");
@@ -90,6 +93,25 @@ export const UsuariosContextProvider = ({ children }) => {
     setEmailError("Email inválido");
     setSenhaError(null);
    }
+  } catch (err) {
+   console.log(err);
+  }
+ }
+
+ async function atualizarStatus(usuario, id) {
+  try {
+   const usuarioAtualizado = {
+    ...usuario,
+    online: true
+   };
+   await fetch(`http://localhost:3000/usuarios/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(usuarioAtualizado),
+    headers: {
+     "Content-Type": "application/json"
+    }
+   });
+   lerUsuariosDb();
   } catch (err) {
    console.log(err);
   }
