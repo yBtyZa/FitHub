@@ -12,8 +12,8 @@ function Header() {
      <h1 onClick={() => (window.location.href = "/")}>FitHub!</h1>
     </div>
     <div className={styles.links}>
-     <Link to="/lista-exercicios">Meus Exercicios</Link>
-     <Link to="/cadastro-exercicios">Cadastrar Exercicios</Link>
+     <Link to="/lista-exercicios">Meus Locais</Link>
+     <Link to="/cadastro-exercicios">Cadastrar Locais</Link>
      <Link to="/dashboard">Perfil</Link>
      <CButton
       onClick={() => {
