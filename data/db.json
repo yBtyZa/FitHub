@@ -12,7 +12,7 @@
       "endereco": "Vila Gilson",
       "cidade": "Fortaleza",
       "estado": "CE",
-      "online": false
+      "online": true
     },
     {
       "id": "2",
@@ -68,7 +68,7 @@
       "endereco": "Quadra 04",
       "cidade": "Picos",
       "estado": "PI",
-      "online": true
+      "online": false
     },
     {
       "id": "f4a8",
@@ -92,56 +92,50 @@
     {
       "id": "1",
       "nome": "Beira Mar",
-      "id_usuario": "f4a8",
+      "tipo": "Caminhada",
       "nome_usuario": "Guilherme Andre Betsa",
-      "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
-      "localizacao": "",
-      "tipo": "Caminhada"
+      "id_usuario": "f4a8",
+      "cep": "88015605",
+      "endereco": "Praça Esteves Júnior",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "numero": "1",
+      "complemento": "B",
+      "latitude": "-27.586861",
+      "longitude": "-48.554228",
+      "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia"
     },
     {
-      "id": "2",
-      "nome": "Beira Mar",
-      "id_usuario": "f4a8",
+      "id": "ac42",
+      "nome": "Beira mar ",
+      "tipo": "Caminhada",
       "nome_usuario": "Guilherme Andre Betsa",
-      "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
-      "localizacao": "",
-      "tipo": "Caminhada"
+      "id_usuario": "f4a8",
+      "cep": "88015605",
+      "endereco": "Praça Esteves Júnior",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "numero": "1",
+      "complemento": "",
+      "latitude": "-27.586861",
+      "longitude": "-48.554228",
+      "descricao": "teste"
     },
     {
-      "id": "3",
-      "nome": "Beira Mar",
-      "id_usuario": "f4a8",
+      "id": "8cb1",
+      "nome": "Trilha da Costa da lagoa ",
+      "tipo": "Trilha",
       "nome_usuario": "Guilherme Andre Betsa",
-      "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
-      "localizacao": "",
-      "tipo": "Caminhada"
-    },
-    {
-      "id": "4",
-      "nome": "Beira Mar",
       "id_usuario": "f4a8",
-      "nome_usuario": "Guilherme Andre Betsa",
-      "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
-      "localizacao": "",
-      "tipo": "Caminhada"
-    },
-    {
-      "id": "5",
-      "nome": "Beira Mar",
-      "id_usuario": "f4a8",
-      "nome_usuario": "Guilherme Andre Betsa",
-      "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
-      "localizacao": "",
-      "tipo": "Caminhada"
-    },
-    {
-      "id": "6",
-      "nome": "Beira Mar",
-      "id_usuario": "f4a8",
-      "nome_usuario": "Guilherme Andre Betsa",
-      "descricao": "Venha desfrutar de uma caminhada revigorante ao longo da deslumbrante costa marítima! Aproveite a brisa fresca do oceano enquanto percorre nossos calçadões à beira-mar, cercados pela beleza natural e vistas panorâmicas. Deixe-se encantar pela serenidade das ondas quebrando suavemente na praia",
-      "localizacao": "",
-      "tipo": "Caminhada"
+      "cep": "88062370",
+      "endereco": "Servidão Caminho Costa da Lagoa",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "numero": "1",
+      "complemento": "",
+      "latitude": "-48.4620218",
+      "longitude": "-27.5671115",
+      "descricao": "Trilha da Costa da Lagoa\n"
     }
   ]
 }

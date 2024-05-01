@@ -83,6 +83,7 @@ export const UsuariosContextProvider = ({ children }) => {
      userLogged = true;
      localStorage.setItem("userLogged", userLogged);
      localStorage.setItem("userNome", JSON.stringify(usuarioEncontrado.nome));
+     localStorage.setItem("userId", JSON.stringify(usuarioEncontrado.id));
      atualizarStatus(usuarioEncontrado, usuarioEncontrado.id);
      window.location.href = "/";
     } else {
