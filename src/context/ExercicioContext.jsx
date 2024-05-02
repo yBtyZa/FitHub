@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
+import { set } from "react-hook-form";
 
 export const ExerciciosContext = createContext();
 
@@ -9,6 +10,7 @@ export const ExerciciosContextProvider = ({ children }) => {
  const [exercicios, setExercicios] = useState([]);
  const [usuariosOnline, setUsuariosOnline] = useState(0);
  const [usuarioLogado, setUsuarioLogado] = useState({});
+ const [locaisUsuario, setLocaisUsuario] = useState([]);
  const usuarioId = JSON.parse(localStorage.getItem("userId"));
 
  async function lerDadosDb() {
@@ -25,6 +27,10 @@ export const ExerciciosContextProvider = ({ children }) => {
  useEffect(() => {
   if (!loading && data) {
    setExercicios(data);
+   const locaisUsuarioAtualizados = data.filter(
+    (exercicio) => exercicio.id_usuario === usuarioId
+   );
+   setLocaisUsuario(locaisUsuarioAtualizados);
    fetch("http://localhost:3000/usuarios")
     .then((res) => res.json())
     .then((value) => {
@@ -63,7 +69,8 @@ export const ExerciciosContextProvider = ({ children }) => {
     isVisible,
     usuariosOnline,
     usuarioLogado,
-    cadastrarNovoLocal
+    cadastrarNovoLocal,
+    locaisUsuario
    }}>
    {children}
   </ExerciciosContext.Provider>

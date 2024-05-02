@@ -156,13 +156,6 @@ function CFormCadastroLocais() {
      {...register("numero", { required: "Numero obrigatorio" })}
     />
     <CTextField
-     label="Complemento"
-     variant="standard"
-     type="text"
-     fullWidth
-     {...register("complemento")}
-    />
-    <CTextField
      label="Latitude"
      variant="standard"
      type="text"
@@ -216,7 +209,11 @@ function CFormCadastroLocais() {
     }}
     variant="contained"
     type="submit"
-    sx={{ backgroundColor: "#124559", width: "50%" }}>
+    sx={{
+     backgroundColor: "#01161e",
+     width: "50%",
+     "&:hover": { backgroundColor: "#124559", color: "#eff6e0" }
+    }}>
     Cadastrar
    </CButton>
   </form>
