@@ -9,13 +9,17 @@ function Header() {
    <nav className={styles.nav}>
     <div className={styles.logo}>
      <img src={logo} alt="logo" />
-     <h1>FitHub!</h1>
+     <h1 onClick={() => (window.location.href = "/")}>FitHub!</h1>
     </div>
     <div className={styles.links}>
-     <Link to="/login">Exercicios</Link>
-     <Link to="/cadastro">Cadastrar Exercicios</Link>
+     <Link to="/lista-exercicios">Meus Locais</Link>
+     <Link to="/cadastro-exercicios">Cadastrar Locais</Link>
      <Link to="/dashboard">Perfil</Link>
      <CButton
+      onClick={() => {
+       window.location.href = "/login";
+       localStorage.clear();
+      }}
       variant="outlined"
       sx={{
        color: "#eff6e0",

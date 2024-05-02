@@ -1,10 +1,7 @@
+import CTemplateCadastroLocais from "../components/templates/CTemplateCadastroLocais";
+
 function CadastroExercicios() {
-    return (
-      <>
-        <h1>CadastroExercicios</h1>
-      </>
-    );
-  }
-  
-  export default CadastroExercicios;
-  
+ return <CTemplateCadastroLocais />;
+}
+
+export default CadastroExercicios;

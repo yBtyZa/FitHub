@@ -32,7 +32,7 @@ function CTitleDashboard() {
      alignItems: "center"
     }}>
     <p>
-     Exercicios cadastrados:{" "}
+     Locais cadastrados:{" "}
      <span className={styles.count}>{exercicios.length}</span>
     </p>
    </Card>

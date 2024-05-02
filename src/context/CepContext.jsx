@@ -3,15 +3,15 @@ import { createContext } from "react";
 export const CepContext = createContext();
 
 export const CepContextProvider = ({ children }) => {
- const buscarCep = async (getValues, setValue) => {
-  let cep = getValues("cep");
+ const buscarCep = async (getValues, setValue, index) => {
+  let cep = getValues("cep" + (index !== undefined ? index : ""));
 
   if (cep.length === 8) {
    try {
     const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
     const data = await response.json();
     if (!data.erro) {
-     alterarValues(data, setValue);
+     alterarValues(data, setValue, index);
     } else {
      alert("CEP não encontrado");
     }
@@ -21,10 +21,16 @@ export const CepContextProvider = ({ children }) => {
   }
  };
 
- const alterarValues = (data, setValue) => {
-  setValue("endereco", data.logradouro || "");
-  setValue("cidade", data.localidade || "");
-  setValue("estado", data.uf || "");
+ const alterarValues = (data, setValue, index) => {
+  setValue(
+   "endereco" + (index !== undefined ? index : ""),
+   data.logradouro || ""
+  );
+  setValue(
+   "cidade" + (index !== undefined ? index : ""),
+   data.localidade || ""
+  );
+  setValue("estado" + (index !== undefined ? index : ""), data.uf || "");
  };
 
  return (

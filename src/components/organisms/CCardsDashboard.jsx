@@ -14,7 +14,7 @@ function CCardsDashboard() {
      key={i}
      sx={{
       width: 345,
-      minHeight: 560,
+      minHeight: 575,
       backgroundColor: "#eff6e0",
       color: "#124559",
       margin: "1rem",
@@ -22,11 +22,25 @@ function CCardsDashboard() {
      }}>
      <Map style={{ width: "345px", height: "210px" }}></Map>
      <div className={styles.card_info}>
-      <h4>Nome: {e.nome}</h4>
-      <p>Localização: {e.localizacao}</p>
-      <p>Tipo: {e.tipo}</p>
-      <p>Por: {e.nome_usuario}</p>
-      <p>Descricão: {e.descricao}</p>
+      <h4>
+       <span className={styles.spanCard}>Nome: </span>
+       {e.nome}
+      </h4>
+      <p>
+       <span className={styles.spanCard}>Localização:</span> {e.endereco}, Nº{" "}
+       {e.numero} {e.complemento != "" && e.complemento} - {e.cidade},{" "}
+       {e.estado} / {e.cep}
+      </p>
+      <p>
+       <span className={styles.spanCard}>Tipo:</span> {e.tipo}
+      </p>
+      <p>
+       <span className={styles.spanCard}>Por: </span>
+       {e.nome_usuario}
+      </p>
+      <p>
+       <span className={styles.spanCard}>Descricão:</span> {e.descricao}
+      </p>
      </div>
     </Card>
    ))}

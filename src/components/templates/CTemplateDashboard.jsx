@@ -11,7 +11,7 @@ function CTemplateDashboard() {
     <CMapaContainer />
     <div className={styles.div_cards}>
      <div className={styles.title}>
-      <h1 style={{ fontWeight: "inherit" }}>Exercícios</h1>
+      <h1 style={{ fontWeight: "inherit" }}>Locais</h1>
       <CTitleDashboard></CTitleDashboard>
      </div>
      <CCardsDashboard />
