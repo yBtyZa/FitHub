@@ -86,6 +86,23 @@
    "senha": "12345678",
    "confirmar_senha": "12345678",
    "online": true
+  },
+  {
+   "id": "d27b",
+   "nome": "thais",
+   "email": "thais@email",
+   "cpf": "00000000003",
+   "data_nasc": "2024-01-01",
+   "sexo": "Feminino",
+   "cep": "88047622",
+   "endereco": "Rua Raimundo Starosky",
+   "cidade": "Florianópolis",
+   "estado": "SC",
+   "endereco_numero": "1",
+   "complemento": "1",
+   "senha": "12345678",
+   "confirmar_senha": "12345678",
+   "online": true
   }
  ],
  "exercicios": [
@@ -132,7 +149,7 @@
    "numero": "1",
    "latitude": "-48.4620218",
    "longitude": "-27.5671115",
-   "descricao": "Trilha da Costa da Lagoa\n"
+   "descricao": "Trilha da Costa da Lagoa"
   }
  ]
 }

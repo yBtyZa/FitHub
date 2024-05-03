@@ -62,6 +62,29 @@ export const ExerciciosContextProvider = ({ children }) => {
   });
  }
 
+ async function atualizarLocais(data) {
+  try {
+   await fetch(`http://localhost:3000/exercicios/${data.id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+     "Content-Type": "application/json"
+    }
+   });
+  } catch (err) {
+   console.log(err);
+  }
+ }
+
+ function deleteLocal(id) {
+  fetch(`http://localhost:3000/exercicios/${id}`, {
+   method: "DELETE"
+  }).then(() => {
+   window.location.reload();
+   alert("Local excluído com sucesso!");
+  });
+ }
+
  return (
   <ExerciciosContext.Provider
    value={{
@@ -70,7 +93,9 @@ export const ExerciciosContextProvider = ({ children }) => {
     usuariosOnline,
     usuarioLogado,
     cadastrarNovoLocal,
-    locaisUsuario
+    locaisUsuario,
+    atualizarLocais,
+    deleteLocal
    }}>
    {children}
   </ExerciciosContext.Provider>
