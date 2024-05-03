@@ -16,7 +16,7 @@ function CCardsDashboard() {
       width: 345,
       minHeight: 575,
       backgroundColor: "#eff6e0",
-      color: "#124559",
+      color: "#01161E",
       margin: "1rem",
       boxShadow: "1px 1px 20px black"
      }}>
