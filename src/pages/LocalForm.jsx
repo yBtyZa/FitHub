@@ -10,6 +10,7 @@ import { CepContext } from "../context/CepContext";
 import { ExerciciosContext } from "../context/ExercicioContext";
 
 function LocalForm({ local, onSubmit }) {
+ let errorCep = "Endereço obrigatório";
  const {
   register,
   handleSubmit,
@@ -33,7 +34,7 @@ function LocalForm({ local, onSubmit }) {
 
  return (
   <div className={styles.card}>
-   <Map style={{ width: "400px", height: "400px" }}></Map>
+   <Map style={{ width: "400px", minHeight: "400px" }}></Map>
    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
     <div className={styles.inputs}>
      <CTextField
@@ -45,8 +46,14 @@ function LocalForm({ local, onSubmit }) {
       defaultValue={local.nome}
       {...register("nome", {
        required: "Nome do local obrigatório",
-       maxLength: 50,
-       minLength: 3
+       maxLength: {
+        value: 50,
+        message: "O nome do local deve ter no maximo 50 caracteres"
+       },
+       minLength: {
+        value: 3,
+        message: "Nome do local deve ter no mínimo 3 caracteres"
+       }
       })}
      />
      <CTextField
@@ -58,12 +65,29 @@ function LocalForm({ local, onSubmit }) {
       defaultValue={local.cep}
       {...register("cep", {
        required: "CEP obrigatório",
-       maxLength: 8,
-       minLength: 8,
+       maxLength: {
+        value: 8,
+        message: "CEP deve ter no máximo 8 digitos"
+       },
+       minLength: {
+        value: 8,
+        message: "CEP deve ter no mínimo 8 digitos"
+       },
        onBlur: () => buscarCep(getValues, setValue)
       })}
      />
     </div>
+    <div
+     style={{
+      color: "red",
+      width: "100%",
+      fontSize: "10px",
+      marginTop: "10px",
+      marginBottom: "10px"
+     }}>
+     {errors.nome && <p>{errors.nome.message}</p>}
+    </div>
+
     <div className={styles.inputsEndereco}>
      <CTextField
       label="Logradouro"
@@ -72,7 +96,9 @@ function LocalForm({ local, onSubmit }) {
       type="text"
       disabled
       defaultValue={local.endereco}
-      {...register("endereco")}
+      {...register("endereco", {
+       required: "Logradouro obrigatório"
+      })}
      />
      <CTextField
       label="Cidade"
@@ -93,7 +119,18 @@ function LocalForm({ local, onSubmit }) {
       {...register("estado")}
      />
     </div>
-    <div className={styles.inputsTriplo}>
+    <div className={styles.inputsQuadruplo}>
+     <CTextField
+      label="Numero"
+      variant="standard"
+      disabled={isDisabled}
+      fullWidth
+      type="number"
+      defaultValue={local.numero}
+      {...register("numero", {
+       required: "Numero obrigatorio"
+      })}
+     />
      <CTextField
       label="Latitude"
       variant="standard"
@@ -130,6 +167,16 @@ function LocalForm({ local, onSubmit }) {
        </MenuItem>
       ))}
      </CTextField>
+     <div
+      style={{
+       color: "red",
+       width: "200%",
+       fontSize: "10px"
+      }}>
+      {(errors.cep || errors.numero || errors.latitude || errors.longitude) && (
+       <p>{errorCep}</p>
+      )}
+     </div>
     </div>
     <CTextField
      label="Descrição"
@@ -141,9 +188,25 @@ function LocalForm({ local, onSubmit }) {
      defaultValue={local.descricao}
      {...register("descricao", {
       required: "Descrição obrigatoria",
-      maxLength: 283
+      maxLength: {
+       value: 293,
+       message: "Descricão muito grande (293 caracteres max)"
+      },
+      minLength: {
+       value: 5,
+       message: "Descricão muito pequena (5 caracteres min)"
+      }
      })}
     />
+    <div
+     style={{
+      color: "red",
+      width: "100%",
+      fontSize: "10px",
+      marginTop: "10px"
+     }}>
+     {errors.descricao && <p>{errors.descricao.message}</p>}
+    </div>
     <div className={styles.buttons}>
      <CButton
       type="submit"
@@ -154,7 +217,26 @@ function LocalForm({ local, onSubmit }) {
            setIsDisabled(!isDisabled);
            reset(local);
           }
-        : () => setIsDisabled(!isDisabled)
+        : () => {
+           let nome = getValues("nome");
+           let cep = getValues("cep");
+           let numero = getValues("numero");
+           let latitude = getValues("latitude");
+           let longitude = getValues("longitude");
+           let descricao = getValues("descricao");
+
+           nome.length > 50 || nome.length < 3
+            ? null
+            : cep.length > 8 || cep.length < 8
+            ? null
+            : latitude.length === 0 ||
+              longitude.length === 0 ||
+              numero.length === 0
+            ? null
+            : descricao.length > 293 || descricao.length < 5
+            ? null
+            : setIsDisabled(!isDisabled);
+          }
       }
       variant="contained"
       sx={

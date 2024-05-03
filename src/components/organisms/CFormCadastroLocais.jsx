@@ -188,8 +188,8 @@ function CFormCadastroLocais() {
     {...register("descricao", {
      required: "Descrição obrigatoria",
      maxLength: {
-      value: 283,
-      message: "Maximo de 283 caracteres"
+      value: 293,
+      message: "Maximo de 293 caracteres"
      },
      minLength: {
       value: 5,

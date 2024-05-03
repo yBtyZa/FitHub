@@ -2,6 +2,9 @@ import LocalForm from "./LocalForm";
 import { useContext } from "react";
 import { ExerciciosContext } from "../context/ExercicioContext";
 import styles from "./pagesCSS/ListaExercicios.module.css";
+import CButton from "../components/atoms/CButton";
+import { Link } from "react-router-dom";
+import { Margin } from "@mui/icons-material";
 
 function ListaExercicios() {
  const { locaisUsuario, atualizarLocais } = useContext(ExerciciosContext);
@@ -12,9 +15,24 @@ function ListaExercicios() {
 
  return (
   <div className={styles.container}>
-   <h1 style={{ fontWeight: "inherit" }} className={styles.title}>
-    Meus Locais
-   </h1>
+   <div className={styles.titleContainer}>
+    <h1 style={{ fontWeight: "inherit" }} className={styles.title}>
+     Meus Locais
+    </h1>
+    <Link to="/cadastro-exercicios">
+     <CButton
+      variant="contained"
+      sx={{
+       backgroundColor: "#01161e",
+       color: "#eff6e0",
+       width: "100%",
+       fontSize: "12px",
+       "&:hover": { backgroundColor: "#124559", color: "#eff6e0" }
+      }}>
+      Cadastrar novo local
+     </CButton>
+    </Link>
+   </div>
    {locaisUsuario.map((local, index) => (
     <div key={local.id} className={styles.cardContainer}>
      <LocalForm local={local} onSubmit={atualizarLocal} />
