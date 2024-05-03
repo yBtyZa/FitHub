@@ -11,6 +11,7 @@ export const ExerciciosContextProvider = ({ children }) => {
  const [usuariosOnline, setUsuariosOnline] = useState(0);
  const [usuarioLogado, setUsuarioLogado] = useState({});
  const [locaisUsuario, setLocaisUsuario] = useState([]);
+ const [positionMarker, setPositionMarker] = useState({});
  const usuarioId = JSON.parse(localStorage.getItem("userId"));
 
  async function lerDadosDb() {
@@ -27,6 +28,14 @@ export const ExerciciosContextProvider = ({ children }) => {
  useEffect(() => {
   if (!loading && data) {
    setExercicios(data);
+   setPositionMarker(() => {
+    return data.map((exercicio) => {
+     return {
+      latitude: exercicio.latitude,
+      longitude: exercicio.longitude
+     };
+    });
+   });
    const locaisUsuarioAtualizados = data.filter(
     (exercicio) => exercicio.id_usuario === usuarioId
    );
@@ -95,7 +104,8 @@ export const ExerciciosContextProvider = ({ children }) => {
     cadastrarNovoLocal,
     locaisUsuario,
     atualizarLocais,
-    deleteLocal
+    deleteLocal,
+    positionMarker
    }}>
    {children}
   </ExerciciosContext.Provider>

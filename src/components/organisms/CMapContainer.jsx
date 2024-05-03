@@ -1,10 +1,19 @@
 import styles from "../../pages/pagesCSS/Dashboard.module.css";
 import Map from "../atoms/Map";
+import { useContext } from "react";
+import { ExerciciosContext } from "../../context/ExercicioContext";
+import { Marker, Popup } from "react-leaflet";
 
-function CMapaContainer() {
+function CMapaContainer(props) {
+ const { positionMarker } = useContext(ExerciciosContext);
+ const positionFixed = [-14.235, -51.9253];
+
  return (
   <div className={styles.leafletContainer}>
    <Map
+    zoom={3.5}
+    position={positionFixed}
+    markers={positionMarker}
     style={{
      width: "600px",
      height: "385px",

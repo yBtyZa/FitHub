@@ -20,7 +20,11 @@ function CCardsDashboard() {
       margin: "1rem",
       boxShadow: "1px 1px 20px black"
      }}>
-     <Map style={{ width: "345px", height: "210px" }}></Map>
+     <Map
+      zoom={14}
+      markers={[e]}
+      position={[Number(e.latitude), Number(e.longitude)]}
+      style={{ width: "345px", height: "210px" }}></Map>
      <div className={styles.card_info}>
       <h4>
        <span className={styles.spanCard}>Nome: </span>

@@ -34,7 +34,11 @@ function LocalForm({ local, onSubmit }) {
 
  return (
   <div className={styles.card}>
-   <Map style={{ width: "400px", minHeight: "400px" }}></Map>
+   <Map
+    zoom={14}
+    markers={[local]}
+    position={[Number(local.latitude), Number(local.longitude)]}
+    style={{ width: "400px", minHeight: "400px" }}></Map>
    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
     <div className={styles.inputs}>
      <CTextField
