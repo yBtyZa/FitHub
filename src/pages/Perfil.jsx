@@ -10,10 +10,18 @@ import { MenuItem } from "@mui/material";
 
 function Perfil() {
  const { usuarioLogado } = useContext(ExerciciosContext);
- const { options, atualizarPerfil } = useContext(UsuariosContext);
+ const { options, atualizarPerfil, excluirUsuario } =
+  useContext(UsuariosContext);
  const { buscarCep } = useContext(CepContext);
  const [isDisabled, setIsDisabled] = useState(true);
- const { register, handleSubmit, reset, getValues, setValue } = useForm();
+ const {
+  register,
+  handleSubmit,
+  reset,
+  getValues,
+  setValue,
+  formState: { errors }
+ } = useForm();
 
  return (
   <div className={styles.container}>
@@ -63,6 +71,16 @@ function Perfil() {
          }
         })}></CTextField>
       </div>
+      <div
+       style={{
+        color: "red",
+        display: "flex",
+        justifyContent: "space-between",
+        fontSize: "10px"
+       }}>
+       {errors.nome && <p>{errors.nome.message}</p>}
+       {errors.email && <p>{errors.email.message}</p>}
+      </div>
       <div className={styles.inputs}>
        <CTextField
         label="CPF"
@@ -107,6 +125,17 @@ function Perfil() {
          </MenuItem>
         ))}
        </CTextField>
+      </div>
+      <div
+       style={{
+        color: "red",
+        display: "flex",
+        justifyContent: "space-between",
+        fontSize: "10px"
+       }}>
+       {errors.cpf && <p>{errors.cpf.message}</p>}
+       {errors.data_nasc && <p>{errors.data_nasc.message}</p>}
+       {errors.sexo && <p>{errors.sexo.message}</p>}
       </div>
       <div className={styles.inputs}>
        <CTextField
@@ -183,6 +212,13 @@ function Perfil() {
         type="text"
         {...register("complemento")}></CTextField>
       </div>
+      <div style={{ color: "red", fontSize: "10px" }}>
+       {(errors.cep ||
+        errors.endereco ||
+        errors.cidade ||
+        errors.estado ||
+        errors.endereco_numero) && <p>Endereço obrigatório</p>}
+      </div>
       <div className={styles.inputs}>
        <CTextField
         label="Senha"
@@ -221,6 +257,16 @@ function Perfil() {
          }
         })}></CTextField>
       </div>
+      <div
+       style={{
+        color: "red",
+        fontSize: "10px",
+        display: "flex",
+        justifyContent: "space-between"
+       }}>
+       {errors.senha && <p>{errors.senha.message}</p>}
+       {errors.confirmar_senha && <p>{errors.confirmar_senha.message}</p>}
+      </div>
       <div className={styles.buttons}>
        <CButton
         variant="contained"
@@ -254,7 +300,7 @@ function Perfil() {
               ? null
               : cep.length < 8 || cep.length > 8
               ? null
-              : numero === " "
+              : numero === ""
               ? null
               : senha.length < 8 || senha.length > 16
               ? null
@@ -280,7 +326,7 @@ function Perfil() {
        </CButton>
        <CButton
         variant="outlined"
-        onClick={() => console.log("excluir")}
+        onClick={() => excluirUsuario(usuarioLogado.id)}
         sx={{
          color: "#990000",
          borderColor: "#990000",
