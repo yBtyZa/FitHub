@@ -2,8 +2,11 @@ import logo from "../../assets/FitHubLogo.png";
 import { Link } from "react-router-dom";
 import CButton from "./CButton";
 import styles from "./Header.module.css";
+import { useContext } from "react";
+import { UsuariosContext } from "../../context/UsuariosContext";
 
 function Header() {
+ const { logout } = useContext(UsuariosContext);
  return (
   <div className={styles.navContainer}>
    <nav className={styles.nav}>
@@ -17,8 +20,7 @@ function Header() {
      <Link to="/dashboard">Perfil</Link>
      <CButton
       onClick={() => {
-       window.location.href = "/login";
-       localStorage.clear();
+       logout(JSON.parse(localStorage.getItem("userId")));
       }}
       variant="outlined"
       sx={{
