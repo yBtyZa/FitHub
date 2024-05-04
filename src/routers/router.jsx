@@ -5,6 +5,7 @@ import CadastroUsuario from "../pages/CadastroUsuario";
 import Dashboard from "../pages/Dashboard";
 import ListaExercicios from "../pages/ListaExercicios";
 import CadastroExercicios from "../pages/CadastroExercicios";
+import Perfil from "../pages/Perfil";
 
 let userLogged = JSON.parse(localStorage.getItem("userLogged")) || false;
 
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
    {
     path: "/cadastro-exercicios",
     element: <CadastroExercicios />
+   },
+   {
+    path: "/perfil",
+    element: <Perfil />
    }
   ]
  }

@@ -17,7 +17,7 @@ function Header() {
     <div className={styles.links}>
      <Link to="/lista-exercicios">Meus Locais</Link>
      <Link to="/cadastro-exercicios">Cadastrar Locais</Link>
-     <Link to="/dashboard">Perfil</Link>
+     <Link to="/perfil">Perfil</Link>
      <CButton
       onClick={() => {
        logout(JSON.parse(localStorage.getItem("userId")));

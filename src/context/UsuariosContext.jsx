@@ -148,6 +148,42 @@ export const UsuariosContextProvider = ({ children }) => {
   window.location.href = "/cadastro-usuario";
  }
 
+ function atualizarPerfil(form) {
+  if (form.senha === form.confirmar_senha) {
+   let id = JSON.parse(localStorage.getItem("userId"));
+   fetch(`http://localhost:3000/usuarios/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(form),
+    headers: {
+     "Content-Type": "application/json"
+    }
+   });
+   fetch("http://localhost:3000/exercicios")
+    .then((res) => res.json())
+    .then((data) => {
+     const exercicios = Array.isArray(data) ? data : [];
+     for (const exercicio of exercicios) {
+      if (exercicio.id_usuario === form.id) {
+       exercicio.nome_usuario = form.nome;
+       console.log(exercicio);
+       fetch(`http://localhost:3000/exercicios/${exercicio.id}`, {
+        method: "PUT",
+        body: JSON.stringify(exercicio),
+        headers: {
+         "Content-Type": "application/json"
+        }
+       });
+      }
+     }
+    });
+   return;
+  }
+  if (form.senha !== form.confirmar_senha) {
+   alert("As senhas precisam ser iguais");
+   return;
+  }
+ }
+
  const options = [
   {
    label: "Masculino",
@@ -178,7 +214,8 @@ export const UsuariosContextProvider = ({ children }) => {
     cpfError,
     emailError,
     options,
-    logout
+    logout,
+    atualizarPerfil
    }}>
    {children}
   </UsuariosContext.Provider>

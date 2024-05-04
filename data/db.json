@@ -12,7 +12,7 @@
       "endereco": "Vila Gilson",
       "cidade": "Fortaleza",
       "estado": "CE",
-      "online": true
+      "online": false
     },
     {
       "id": "2",
@@ -26,7 +26,7 @@
       "endereco": "Travessa da Um",
       "cidade": "São Luís",
       "estado": "MA",
-      "online": true
+      "online": false
     },
     {
       "id": "3",
@@ -40,7 +40,7 @@
       "endereco": "Avenida Jornalista Oberaldo Firmino dos Santos",
       "cidade": "Maceió",
       "estado": "AL",
-      "online": true
+      "online": false
     },
     {
       "id": "4",
@@ -85,7 +85,7 @@
       "complemento": "A",
       "senha": "12345678",
       "confirmar_senha": "12345678",
-      "online": false
+      "online": true
     },
     {
       "id": "d27b",
