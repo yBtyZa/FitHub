@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 function Map(props) {
@@ -19,11 +19,7 @@ function Map(props) {
    {Object.values(markers).map((marker, index) => (
     <Marker
      key={index}
-     position={[Number(marker.latitude), Number(marker.longitude)]}>
-     <Popup>
-      A pretty CSS3 popup. <br /> Easily customizable.
-     </Popup>
-    </Marker>
+     position={[Number(marker.latitude), Number(marker.longitude)]}></Marker>
    ))}
   </MapContainer>
  );

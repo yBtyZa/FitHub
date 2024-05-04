@@ -184,6 +184,30 @@ export const UsuariosContextProvider = ({ children }) => {
   }
  }
 
+ function excluirUsuario(id) {
+  fetch("http://localhost:3000/exercicios")
+   .then((res) => res.json())
+   .then((data) => {
+    const locaisUsuario = data.filter((data) => data.id_usuario === id);
+    if (locaisUsuario.length > 0) {
+     alert(
+      "Não foi possível excluir o usuário, existe locais vinculados a ele"
+     );
+     return;
+    }
+    if (confirm("Tem certeza que deseja excluir o usuário?")) {
+     fetch(`http://localhost:3000/usuarios/${id}`, {
+      method: "DELETE",
+      headers: {
+       "Content-Type": "application/json"
+      }
+     });
+     window.location.href = "/";
+     localStorage.clear();
+    }
+   });
+ }
+
  const options = [
   {
    label: "Masculino",
@@ -215,7 +239,8 @@ export const UsuariosContextProvider = ({ children }) => {
     emailError,
     options,
     logout,
-    atualizarPerfil
+    atualizarPerfil,
+    excluirUsuario
    }}>
    {children}
   </UsuariosContext.Provider>
