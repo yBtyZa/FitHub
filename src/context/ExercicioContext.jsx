@@ -63,10 +63,6 @@ export const ExerciciosContextProvider = ({ children }) => {
   }
  }, [data, loading]);
 
- useEffect(() => {
-  console.log(usuarioOnlineNomes);
- }, [usuarioOnlineNomes]);
-
  function cadastrarNovoLocal(formLocal) {
   fetch(url, {
    method: "POST",
@@ -75,7 +71,7 @@ export const ExerciciosContextProvider = ({ children }) => {
     "Content-Type": "application/json"
    }
   }).then(() => {
-   window.location.href = "/";
+   window.location.href = "/lista-exercicios";
    alert("Local cadastrado com sucesso!");
   });
  }

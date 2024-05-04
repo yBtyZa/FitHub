@@ -2,10 +2,17 @@ import styles from "../../pages/pagesCSS/CadastroLocais.module.css";
 import CFormCadastroLocais from "../organisms/CFormCadastroLocais";
 function CTemplateCadastroLocais() {
  return (
-  <div className={styles.container}>
-   <h1 style={{ fontWeight: "inherit" }}>
-    Cadastre novos locais de exercícios
-   </h1>
+  <div className={styles.container} style={{ height: "80vh" || auto }}>
+   <div
+    style={{
+     textAlign: "start",
+     width: "100%",
+     padding: "0 0 1rem 3rem "
+    }}>
+    <h1 style={{ fontWeight: "inherit" }}>
+     Cadastre novos locais de exercícios
+    </h1>
+   </div>
    <div className={styles.formCadastro}>
     <CFormCadastroLocais />
    </div>
