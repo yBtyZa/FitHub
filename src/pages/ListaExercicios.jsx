@@ -4,7 +4,6 @@ import { ExerciciosContext } from "../context/ExercicioContext";
 import styles from "./pagesCSS/ListaExercicios.module.css";
 import CButton from "../components/atoms/CButton";
 import { Link } from "react-router-dom";
-import { Margin } from "@mui/icons-material";
 
 function ListaExercicios() {
  const { locaisUsuario, atualizarLocais } = useContext(ExerciciosContext);
@@ -33,11 +32,19 @@ function ListaExercicios() {
      </CButton>
     </Link>
    </div>
-   {locaisUsuario.map((local, index) => (
-    <div key={local.id} className={styles.cardContainer}>
-     <LocalForm local={local} onSubmit={atualizarLocal} />
+   {locaisUsuario.length === 0 ? (
+    <div className={styles.semLocais}>
+     <h1 style={{ fontWeight: "inherit" }}>
+      Você ainda não possui locais cadastrados.
+     </h1>
     </div>
-   ))}
+   ) : (
+    locaisUsuario.map((local, index) => (
+     <div key={local.id} className={styles.cardContainer}>
+      <LocalForm local={local} onSubmit={atualizarLocal} />
+     </div>
+    ))
+   )}
   </div>
  );
 }

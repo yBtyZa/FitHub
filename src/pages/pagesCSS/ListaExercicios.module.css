@@ -66,3 +66,12 @@
     align-items: center;
     padding: 1rem 5rem 0 2.5rem;
 }
+
+.semLocais {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    padding-bottom: 15vh;
+}

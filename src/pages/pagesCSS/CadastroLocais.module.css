@@ -1,6 +1,5 @@
 .container {
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +7,6 @@
     color: #EFF6E0;
     background-image: url('../../assets/image-mapa.jpg');
     background-size: cover;
-    padding-top: 10rem;
 }
 
 .formCadastro {
@@ -17,28 +15,28 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    margin-top: 2rem;
+
     background-color: #EFF6E0;
-    padding: 1rem 0 2rem 0;
-    border-radius: 20px;
-    margin-bottom: 10rem;
+
+    border-radius: 10px;
+
 }
 
 .textFields {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
     width: 100%;
 }
 
 .textFieldsCep {
     display: grid;
     grid-template-columns: 1.3fr 3fr 2fr 0.6fr;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .textFieldsCep2 {
     display: grid;
     grid-template-columns: 1.5fr 3fr 3fr;
-    gap: 1.5rem;
+    gap: 1rem;
 }

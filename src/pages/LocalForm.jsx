@@ -31,7 +31,6 @@ function LocalForm({ local, onSubmit }) {
   "Surf",
   "Outro"
  ];
-
  return (
   <div className={styles.card}>
    <Map

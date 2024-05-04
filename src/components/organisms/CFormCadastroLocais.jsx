@@ -33,10 +33,12 @@ function CFormCadastroLocais() {
     cadastrarNovoLocal(formLocal, setValue);
    })}
    style={{
-    width: "80%",
+    width: "90%",
+    height: "65vh",
     display: "flex",
     flexDirection: "column",
-    gap: "1rem",
+    gap: "0.3rem",
+    paddingTop: "0.5rem",
     alignItems: "center"
    }}>
    <div className={styles.textFields}>
