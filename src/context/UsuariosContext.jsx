@@ -103,7 +103,7 @@ export const UsuariosContextProvider = ({ children }) => {
   try {
    const usuarioAtualizado = {
     ...usuario,
-    online: true
+    online: !usuario.online
    };
    await fetch(`http://localhost:3000/usuarios/${id}`, {
     method: "PUT",
@@ -115,6 +115,28 @@ export const UsuariosContextProvider = ({ children }) => {
    lerUsuariosDb();
   } catch (err) {
    console.log(err);
+  }
+ }
+
+ async function logout(id) {
+  try {
+   let res = await fetch(`http://localhost:3000/usuarios/${id}`);
+   let data = await res.json();
+   const usuarioLogged = {
+    ...data,
+    online: !data.online
+   };
+   await fetch(`http://localhost:3000/usuarios/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(usuarioLogged),
+    headers: {
+     "Content-Type": "application/json"
+    }
+   });
+   window.location.href = "/login";
+   localStorage.clear();
+  } catch (err) {
+   alert(err);
   }
  }
 
@@ -155,7 +177,8 @@ export const UsuariosContextProvider = ({ children }) => {
     senhaError,
     cpfError,
     emailError,
-    options
+    options,
+    logout
    }}>
    {children}
   </UsuariosContext.Provider>

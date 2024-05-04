@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
-import { set } from "react-hook-form";
 
 export const ExerciciosContext = createContext();
 
@@ -9,6 +8,7 @@ export const ExerciciosContextProvider = ({ children }) => {
  const { data, loading, isVisible } = useFetch(url);
  const [exercicios, setExercicios] = useState([]);
  const [usuariosOnline, setUsuariosOnline] = useState(0);
+ const [usuarioOnlineNomes, setUsuarioOnlineNomes] = useState([]);
  const [usuarioLogado, setUsuarioLogado] = useState({});
  const [locaisUsuario, setLocaisUsuario] = useState([]);
  const [positionMarker, setPositionMarker] = useState({});
@@ -50,6 +50,11 @@ export const ExerciciosContextProvider = ({ children }) => {
       }
       return acc;
      }, 0);
+     const usuariosOnline = value
+      .filter((user) => user.online)
+      .map((user) => user.nome);
+     setUsuarioOnlineNomes(usuariosOnline);
+
      setUsuariosOnline(usuariosOnlineCount);
     })
     .catch((error) => {
@@ -57,6 +62,10 @@ export const ExerciciosContextProvider = ({ children }) => {
     });
   }
  }, [data, loading]);
+
+ useEffect(() => {
+  console.log(usuarioOnlineNomes);
+ }, [usuarioOnlineNomes]);
 
  function cadastrarNovoLocal(formLocal) {
   fetch(url, {
@@ -105,7 +114,8 @@ export const ExerciciosContextProvider = ({ children }) => {
     locaisUsuario,
     atualizarLocais,
     deleteLocal,
-    positionMarker
+    positionMarker,
+    usuarioOnlineNomes
    }}>
    {children}
   </ExerciciosContext.Provider>
