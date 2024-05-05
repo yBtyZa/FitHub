@@ -99,3 +99,64 @@
     color: #01161E;
     font-weight: bold;
 }
+
+@media (max-width: 800px) {
+    .welcome {
+        font-size: 12px;
+    }
+
+    .welcome h4 {
+        text-align: center;
+        padding: 0 0.5rem;
+    }
+
+    .leafletContainer {
+        padding-top: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .description {
+        font-size: 12px;
+        width: 100%;
+        padding: 3rem 1rem 2rem 1rem;
+    }
+
+    .title {
+        flex-direction: column;
+        font-size: 12px;
+        padding-bottom: 2rem;
+    }
+
+    .titleExercicios {
+        margin-right: 10rem !important;
+    }
+
+    .titleExercicios p {
+        width: 40vw;
+    }
+
+    .titleOnline {
+        margin-left: 10rem !important;
+    }
+
+    .card {
+        font-size: 13px;
+    }
+}
+
+@media ((min-width: 801px) and (max-width: 1200px)) {
+    .leafletContainer {
+        padding-top: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .description {
+        font-size: 12px;
+        width: 100%;
+        padding: 3rem 1rem 2rem 1rem;
+    }
+}

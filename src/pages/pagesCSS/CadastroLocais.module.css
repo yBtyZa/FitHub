@@ -1,9 +1,9 @@
 .container {
     width: 100vw;
+    height: 150vh !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     color: #EFF6E0;
     background-image: url('../../assets/image-mapa.jpg');
     background-size: cover;
@@ -17,6 +17,7 @@
     width: 50%;
     background-color: #EFF6E0;
     border-radius: 10px;
+    padding-bottom: 5rem;
 }
 
 .textFields {
@@ -36,4 +37,57 @@
     display: grid;
     grid-template-columns: 1.5fr 3fr 3fr;
     gap: 1rem;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+@media (max-width: 800px) {
+    .container {
+        height: 140vh !important;
+        justify-content: start;
+    }
+
+    .title {
+        font-size: 12px;
+        padding: 2.5rem 1rem !important;
+    }
+
+    .formCadastro {
+        width: 90%;
+        padding-bottom: 1.5rem;
+    }
+
+    .formCad {
+        height: 100% !important;
+    }
+
+    .textFieldsCep {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .textFieldsCep2 {
+        grid-template-columns: 0.6fr 1fr 1fr;
+    }
+
+    .btn {
+        margin-top: 1rem !important;
+    }
+}
+
+@media ((min-width: 801px) and (max-width: 1200px)) {
+    .title {
+        height: 15vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .formCadastro {
+        width: 80%;
+    }
 }
