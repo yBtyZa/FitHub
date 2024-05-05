@@ -104,20 +104,20 @@
     },
     {
       "id": "d27b",
-      "nome": "Thais",
+      "nome": "Thais Elaine",
       "email": "thais@email",
       "cpf": "00000000003",
       "data_nasc": "2024-01-01",
       "sexo": "Feminino",
-      "cep": "88047622",
-      "endereco": "Rua Raimundo Starosky",
+      "cep": "88010400",
+      "endereco": "Praça Quinze de Novembro",
       "cidade": "Florianópolis",
       "estado": "SC",
       "endereco_numero": "1",
       "complemento": "1",
       "senha": "12345678",
       "confirmar_senha": "12345678",
-      "online": true
+      "online": false
     }
   ],
   "exercicios": [
@@ -135,21 +135,6 @@
       "latitude": "-23.5860006",
       "longitude": "-46.6575956",
       "descricao": "Explore a tranquilidade do Parque Ibirapuera em São Paulo. Caminhe por trilhas arborizadas, relaxe à beira do lago e desfrute de eventos culturais ao ar livre. Uma experiência revigorante em meio à natureza urbana."
-    },
-    {
-      "id": "8db2",
-      "nome": "Beira Mar Norte",
-      "tipo": "Caminhada",
-      "nome_usuario": "Guilherme Andre Betsa",
-      "id_usuario": "f4a8",
-      "cep": "88010400",
-      "endereco": "Praça Quinze de Novembro",
-      "cidade": "Florianópolis",
-      "estado": "SC",
-      "numero": "5562",
-      "latitude": "-27.5877555",
-      "longitude": "-48.5577811",
-      "descricao": "Desfrute de uma revigorante caminhada na beira-mar, onde a brisa do oceano acaricia sua pele. Contemple o horizonte enquanto caminha pelo calçadão, mergulhe nos encantos das ondas quebrando suavemente na praia. Uma experiência revitalizante à beira da natureza marinha."
     },
     {
       "id": "6242",
@@ -195,6 +180,36 @@
       "latitude": "-15.826906",
       "longitude": "-47.8748228",
       "descricao": "O Portão do Lago Sul, em Brasília, exibe arcos imponentes e design modernista, proporcionando acesso ao lago Paranoá e suas áreas de lazer, ciclovias e vistas panorâmicas, sendo um convite à exploração da sua beleza arquitetônica e natural."
+    },
+    {
+      "id": "30dc",
+      "nome": "Beira Mar",
+      "tipo": "Caminhada",
+      "nome_usuario": "Thais Elaine",
+      "id_usuario": "d27b",
+      "cep": "88010400",
+      "endereco": "Praça Quinze de Novembro",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "numero": "5562",
+      "latitude": "-27.5877555",
+      "longitude": "-48.5577811",
+      "descricao": "Desfrute de uma revigorante caminhada na beira-mar, onde a brisa do oceano acaricia sua pele. Contemple o horizonte enquanto caminha pelo calçadão, mergulhe nos encantos das ondas quebrando suavemente na praia. Uma experiência revitalizante à beira da natureza marinha."
+    },
+    {
+      "id": "8508",
+      "nome": "Academia Pratique Fitness",
+      "tipo": "Musculação",
+      "nome_usuario": "Thais Elaine",
+      "id_usuario": "d27b",
+      "cep": "88010200",
+      "endereco": "Rua Francisco Tolentino",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "numero": "800",
+      "latitude": "-27.5951268",
+      "longitude": "-48.5602095",
+      "descricao": "Pratique Fitness oferece ambiente completo para diversas atividades físicas, promovendo saúde e bem-estar. Os exercícios beneficiam corpo, mente e interações sociais."
     }
   ]
 }
