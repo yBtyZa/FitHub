@@ -21,6 +21,7 @@ function CTitleDashboard() {
  return (
   <div className={styles.title_info}>
    <div
+    className={styles.titleExercicios}
     style={{
      backgroundColor: "#01161E",
      color: "#eff6e0",
@@ -37,6 +38,7 @@ function CTitleDashboard() {
     </p>
    </div>
    <div
+    className={styles.titleOnline}
     style={{
      backgroundColor: "#01161E",
      color: "#eff6e0",

@@ -6,6 +6,7 @@ function LocalForm({ local, onSubmit }) {
  return (
   <div className={styles.card}>
    <Map
+    className={styles.map}
     zoom={14}
     markers={[local]}
     position={[Number(local.latitude), Number(local.longitude)]}

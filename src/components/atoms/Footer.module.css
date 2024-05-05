@@ -12,3 +12,12 @@
     display: flex;
     gap: 1.5rem;
 }
+
+@media (max-width: 1200px) {
+    .footer {
+        flex-direction: column-reverse;
+        font-size: 10px;
+        height: auto;
+        padding: 1rem 0;
+    }
+}

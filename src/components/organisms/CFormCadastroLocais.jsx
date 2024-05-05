@@ -29,6 +29,7 @@ function CFormCadastroLocais() {
  const { buscarCep } = useContext(CepContext);
  return (
   <form
+   className={styles.formCad}
    onSubmit={handleSubmit((formLocal) => {
     cadastrarNovoLocal(formLocal, setValue);
    })}
@@ -204,20 +205,22 @@ function CFormCadastroLocais() {
      <p style={{ color: "red" }}>{errors.descricao.message}</p>
     )}
    </div>
-   <CButton
-    onClick={() => {
-     setValue("id_usuario", usuarioLogado.id);
-     setValue("nome_usuario", usuarioLogado.nome);
-    }}
-    variant="contained"
-    type="submit"
-    sx={{
-     backgroundColor: "#01161e",
-     width: "50%",
-     "&:hover": { backgroundColor: "#124559", color: "#eff6e0" }
-    }}>
-    Cadastrar
-   </CButton>
+   <div className={styles.btn}>
+    <CButton
+     onClick={() => {
+      setValue("id_usuario", usuarioLogado.id);
+      setValue("nome_usuario", usuarioLogado.nome);
+     }}
+     variant="contained"
+     type="submit"
+     sx={{
+      backgroundColor: "#01161e",
+      width: "50%",
+      "&:hover": { backgroundColor: "#124559", color: "#eff6e0" }
+     }}>
+     Cadastrar
+    </CButton>
+   </div>
   </form>
  );
 }

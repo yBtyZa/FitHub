@@ -4,10 +4,11 @@ function CTemplateCadastroLocais() {
  return (
   <div className={styles.container} style={{ height: "80vh" || auto }}>
    <div
+    className={styles.title}
     style={{
      textAlign: "start",
      width: "100%",
-     padding: "0 0 1rem 3rem "
+     padding: "2rem 0 3rem 3rem "
     }}>
     <h1 style={{ fontWeight: "inherit" }}>
      Cadastre novos locais de exercícios
